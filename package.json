@@ -12,8 +12,8 @@
     "type": "git",
     "url": "git+https://github.com/retog/sparql-client.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Reto Gmür <reto@factsmission.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/retog/sparql-client/issues"
   },
