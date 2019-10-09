@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/retog/sparql-client#readme",
   "dependencies": {
-    "ext-rdflib": "^0.5.4",
+    "ext-rdflib": "^0.5.5",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
