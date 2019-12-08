@@ -2,12 +2,13 @@ import $rdf from "ext-rdflib";
 import fetch from "node-fetch"
 
 export default class SparqlEndpoint {
-    constructor(uri) {
+    constructor(uri, logQueries = false) {
         this._uri = uri;
+        this._logQueries = logQueries;
     }
 
     getSparqlResultSet(query) {
-        console.log(query);
+        if (this._logQueries) console.log(query);
         let encodedQuery = encodeURIComponent(query);
         return fetch(this._uri + "?query=" + encodedQuery, {
             headers: {
@@ -24,7 +25,7 @@ export default class SparqlEndpoint {
     }
     
     getSparqlRDF(query) {
-        console.log(query);
+        if (this._logQueries) console.log(query);
         let encodedQuery = encodeURIComponent(query);
         return $rdf.rdfFetch(this._uri + "?query=" + encodedQuery, {
             headers: new Headers({
