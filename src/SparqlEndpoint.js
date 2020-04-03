@@ -7,10 +7,11 @@ export default class SparqlEndpoint {
         this._logQueries = logQueries;
     }
 
-    getSparqlResultSet(query) {
+    getSparqlResultSet(query, fetchOptions = {}) {
         if (this._logQueries) console.log(query);
         let encodedQuery = encodeURIComponent(query);
         return fetch(this._uri + "?query=" + encodedQuery, {
+            ...fetchOptions,
             headers: {
                 accept: "application/sparql-results+json"
             }
@@ -24,10 +25,11 @@ export default class SparqlEndpoint {
         });
     }
     
-    getSparqlRDF(query) {
+    getSparqlRDF(query, fetchOptions = {}) {
         if (this._logQueries) console.log(query);
         let encodedQuery = encodeURIComponent(query);
         return $rdf.rdfFetch(this._uri + "?query=" + encodedQuery, {
+            ...fetchOptions,
             headers: new Headers({
                 accept: "text/turtle"
             })
