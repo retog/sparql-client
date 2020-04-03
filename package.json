@@ -1,6 +1,6 @@
 {
   "name": "@retog/sparql-client",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A minimalistic SPARQL client that uses ext-rdflib to parse RDF responses",
   "main": "lib/SparqlEndpoint.js",
   "scripts": {
