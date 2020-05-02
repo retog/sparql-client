@@ -5,6 +5,7 @@
   "main": "lib/SparqlEndpoint.js",
   "scripts": {
     "prepublishOnly": "babel --no-babelrc src --out-dir lib -s --plugins=babel-plugin-add-module-exports --presets=@babel/preset-env",
+    "pretest": "babel --no-babelrc src --out-dir lib -s --plugins=babel-plugin-add-module-exports --presets=@babel/preset-env",
     "test": "mocha --require @babel/register"
   },
   "repository": {
