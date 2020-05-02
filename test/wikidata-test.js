@@ -10,4 +10,11 @@ describe("SparqlEndpoint", function() {
             assert.ok(res.results.bindings.length)
         }).timeout(15000);
     });
+    describe("getSparqlRDF", function() {
+        it("graph returned in describe query should have triples", async function() {
+            const quads = await sparqlEndpoint.getSparqlRDF(
+                "DESCRIBE wd:Q243");
+            assert.ok(quads.length > 1)
+        }).timeout(15000);
+    });
   });
